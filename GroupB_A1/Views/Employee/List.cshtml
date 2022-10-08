@@ -1,0 +1,36 @@
+@model System.Collections.Generic.List<GroupB_A1.Models.Employee>
+
+@{
+    ViewBag.Title = "Employee List";
+}
+
+
+<div class="container">
+    <h4 class="text-center">Employees</h4>
+        <br/>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td class="lead"><img class="img-thumbnail rounded-circle" style="width: 50px;" src="@item.MugshotPhoto" alt="@item.Name @item.LastName"/></td>
+                    <td class="lead">@item.ID</td>
+                    <td class="lead">@item.Name @item.LastName</td>
+                    <td class="lead">@item.Department.Name</td>
+                    <td class="lead">@item.OfficeLocation.Name</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>
